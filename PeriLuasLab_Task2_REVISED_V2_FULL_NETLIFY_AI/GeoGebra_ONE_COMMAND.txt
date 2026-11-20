@@ -1,0 +1,27 @@
+GEOGEBRA CLASSIC — ONE COMMAND (COPY THE NEXT LINE ONLY)
+=========================================================
+
+Execute({"p=Slider(1,12,1,1,150,false,true,false,false)","q=Slider(1,12,1,1,150,false,true,false,false)","SetValue(p,6)","SetValue(q,4)","G=(0,0)","H=(p,0)","I=(p,q)","J=(0,q)","garden=Polygon(G,H,I,J)","perimeterCalc=2*(p+q)","areaCalc=p*q"})
+
+STEPS
+1. Open GeoGebra Classic (https://www.geogebra.org/classic) and choose a NEW BLANK worksheet.
+2. Copy the entire Execute({...}) line above into the Algebra Input, then press Enter ONCE.
+3. Verify the sliders p and q exist and that the shape changes when p or q changes.
+4. Set p=6 and q=4, then confirm perimeterCalc=20 and areaCalc=24.
+5. Save / Download as GeoGebra file (.ggb) and name it EXACTLY: PeriLuasLab.ggb
+6. Reopen the saved file in GeoGebra to confirm the construction survived saving.
+7. Put PeriLuasLab.ggb inside: assets/PeriLuasLab.ggb
+8. Deploy the updated FULL Netlify project, or rebuild the static folder from the project.
+9. On the published PeriLuas Lab website, select Explore > Launch GeoGebra model.
+   The REVISED website will detect assets/PeriLuasLab.ggb and load it automatically.
+   If the file is not present, the website will generate a rectangle via GeoGebra API.
+
+NOTE
+- This is exactly one GeoGebra Execute command, containing a list of steps.
+- GeoGebra command support may differ by app/version. If a command is rejected, inspect the error and use the provided GeoGebra_Construction_Guide.txt to build the same objects manually.
+- Variables must be named p and q, and the polygon must be named garden for HTML-slider synchronisation.
+- The saved .ggb MUST be tested in GeoGebra and on your published site.
+
+Based on official documentation:
+https://geogebra.github.io/docs/manual/en/commands/Execute/
+https://geogebra.github.io/docs/manual/en/commands/Slider/

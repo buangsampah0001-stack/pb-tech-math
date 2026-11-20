@@ -1,0 +1,31 @@
+PERILUAS LAB — FUNCTIONAL TEST RESULTS
+Date: 19 November 2026 (Malaysia)
+Test environment: Chromium 1280/768/390px using playwright.set_content for local HTML source.
+NOTE: items marked NOT TESTED are not automated failures; they require network or owner publication.
+
+PASS         | All five sections available | 
+PASS         | Initial geometric output | 
+PASS         | Diagnostic wrong answer supported | 
+PASS         | Diagnostic correct response and progress | 
+PASS         | Explore nav | 
+PASS         | Slider updates math | 
+PASS         | 144 dimension combinations mathematically correct | 
+PASS         | Observation table saves shape | 
+PASS         | CP2 correct feedback | 
+PASS         | Mission 1 counterexample and preview | 
+PASS         | Mission 2 counterexample and preview | 
+PASS         | Three-stage misconception hint sequence | 
+PASS         | CP3 wrong + correct differentiation | 
+PASS         | Garden application & CP4 | 
+PASS         | Local reflection save | 
+PASS         | Anonymous learning log exported | 
+PASS         | Responsive width 390 | scroll width 390
+PASS         | Responsive width 768 | scroll width 768
+PASS         | Responsive width 1280 | scroll width 1280
+PASS         | No JavaScript page errors | 
+PASS         | Local infographic file exists | 
+PASS         | Documentation PDF and DOCX exist | 
+NOT TESTED   | GeoGebra online external runtime | NOT TESTED: external GeoGebra network access blocked in this environment
+NOT TESTED   | Google Sites / Netlify public deployment | NOT TESTED: user publishing required
+
+Honesty: No classroom trial was conducted. External GeoGebra integration and public site embedding remain unverified.

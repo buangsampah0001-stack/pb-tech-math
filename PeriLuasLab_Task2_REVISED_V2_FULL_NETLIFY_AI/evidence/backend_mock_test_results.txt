@@ -1,0 +1,14 @@
+PASS | Valid controlled mathematical input
+PASS | Unrelated topics rejected
+PASS | Invalid support level rejected
+PASS | Cross-origin request blocked
+PASS | Invalid JSON payload parameters blocked
+PASS | Missing key reports configuration error
+PASS | Default model is selected
+PASS | Server-verified perimeter sent to model
+PASS | Server-verified area sent to model
+PASS | Key passed to Gemini in server-side header
+PASS | Mocked Gemini response delivered
+PASS | API key not exposed to client response
+PASS | Quota exhaustion uses safe fallback error
+Backend mocked integration tests completed; NO real Gemini call executed.

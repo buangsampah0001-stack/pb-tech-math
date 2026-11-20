@@ -1,0 +1,18 @@
+import handler, {validate} from '../netlify/functions/ai-tutor.mjs';
+const verify=(ok,name)=>{if(!ok)throw new Error(name);console.log('PASS | '+name)};
+verify(validate({topic:'samep',level:2,p:6,q:4})?.p===6,'Valid controlled mathematical input');
+verify(validate({topic:'some other topic',level:2,p:6,q:4})===null,'Unrelated topics rejected');
+verify(validate({topic:'samep',level:0,p:6,q:4})===null,'Invalid support level rejected');
+const req=(body,origin='https://periluas.example',ip='test-unique')=>new Request('https://periluas.example/.netlify/functions/ai-tutor',{method:'POST',headers:{'content-type':'application/json','origin':origin,'x-nf-client-connection-ip':ip},body:JSON.stringify(body)});
+const input={topic:'samep',level:1,p:6,q:4};
+let r=await handler(req(input,'https://elsewhere.example','blocked-ip'));verify(r.status===403,'Cross-origin request blocked');
+r=await handler(req({topic:'other',level:1,p:6,q:4}));verify(r.status===400,'Invalid JSON payload parameters blocked');
+delete process.env.GEMINI_API_KEY;
+r=await handler(req(input));verify(r.status===503&&(await r.json()).error.includes('GEMINI_API_KEY'),'Missing key reports configuration error');
+process.env.GEMINI_API_KEY='TEST-KEY-DO-NOT-USE';
+const oldFetch=globalThis.fetch;
+globalThis.fetch=async (url,opts)=>{const b=JSON.parse(opts.body);verify(url.includes('gemini-2.5-flash-lite'),'Default model is selected');verify(b.contents[0].parts[0].text.includes('P=2(6+4)=20'),'Server-verified perimeter sent to model');verify(b.contents[0].parts[0].text.includes('A=6×4=24'),'Server-verified area sent to model');verify(opts.headers['x-goog-api-key']==='TEST-KEY-DO-NOT-USE','Key passed to Gemini in server-side header');return new Response(JSON.stringify({candidates:[{content:{parts:[{text:'Look at the boundary first. Which edges are part of the fence?'}]}}]}),{status:200,headers:{'content-type':'application/json'}})};
+r=await handler(req(input,'https://periluas.example','mock-success-ip'));const data=await r.json();verify(r.status===200&&data.hint.includes('Look at the boundary'),'Mocked Gemini response delivered');verify(!JSON.stringify(data).includes('TEST-KEY'),'API key not exposed to client response');
+globalThis.fetch=async()=>new Response(JSON.stringify({error:{message:'Quota reached'}}),{status:429,headers:{'content-type':'application/json'}});
+r=await handler(req(input,'https://periluas.example','quota-ip'));verify(r.status===429,'Quota exhaustion uses safe fallback error');globalThis.fetch=oldFetch;
+console.log('Backend mocked integration tests completed; NO real Gemini call executed.');

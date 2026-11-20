@@ -1,0 +1,61 @@
+PERILUAS LAB — GEOGEBRA DYNAMIC CONSTRUCTION GUIDE (ENGLISH)
+================================================================
+
+Purpose: create a native GeoGebra rectangle linked to two numerical variables.
+Documented GeoGebra engine: https://www.geogebra.org/apps/deployggb.js
+Official API: https://geogebra.github.io/docs/reference/en/GeoGebra_Apps_API/
+Official slider syntax: https://geogebra.github.io/docs/manual/en/commands/Slider/
+
+OPTION A — DIRECTLY FROM THE PERILUAS LAB WEBSITE
+1. Host the package online. Open index.html through the public HTTPS URL.
+2. Navigate to "02 · Explore" and choose "Launch GeoGebra model".
+3. Wait for the official GeoGebra engine and construction to load.
+4. Change the Length and Width sliders in the website; ensure the rectangle
+   and the dependent numerical values inside GeoGebra respond appropriately.
+5. Click "Download .ggb" to download the native worksheet.
+6. REOPEN the exported file in GeoGebra and confirm its correctness.
+
+OPTION B — REBUILD MANUALLY IN GEOGEBRA CLASSIC
+Start a blank GeoGebra Classic 2D graphing workspace. Enter these commands
+one at a time into the Algebra input (English command names):
+
+p = 6
+q = 4
+G = (0,0)
+H = (p,0)
+I = (p,q)
+J = (0,q)
+garden = Polygon(G,H,I,J)
+perimeterCalc = 2*(p+q)
+areaCalc = p*q
+
+Then set p and q as independent numerical sliders from 1 to 12 using
+GeoGebra settings (increment 1) or recreate them via the Slider command:
+  p = Slider(1,12,1,1,150,false,true,false,false)
+  q = Slider(1,12,1,1,150,false,true,false,false)
+
+If GeoGebra rejects a slider assignment, use its Slider tool to create
+independent numeric sliders named p and q BEFORE creating points G,H,I,J.
+Ensure both dimensions equal 6 and 4 to start.
+
+Verify these cases:
+  p=6, q=4  --> P=20; A=24
+  p=2, q=8  --> P=20; A=16
+  p=5, q=5  --> P=20; A=25
+  p=3, q=8  --> P=22; A=24
+  p=4, q=6  --> P=20; A=24
+
+Use File > Download as > GeoGebra file (.ggb), or the equivalent Download option
+in the current GeoGebra interface. Reopen the file before submission.
+
+IMPORTANT HONESTY NOTE
+----------------------
+A user-provided screenshot confirms the official GeoGebra engine loaded in a
+local browser. Native .ggb exporting and reopening have NOT been independently
+verified. The revised website can load assets/PeriLuasLab.ggb on a hosted site
+or generate a dynamic construction through the official GeoGebra Apps API.
+The GeoGebra_ONE_COMMAND.txt file contains a new single command for creating
+the same model in a blank GeoGebra Classic worksheet. This guide offers a reproducible
+fallback; it is not a claim of successful live GeoGebra deployment.
+
+ATtribution: Made with GeoGebra® — https://www.geogebra.org

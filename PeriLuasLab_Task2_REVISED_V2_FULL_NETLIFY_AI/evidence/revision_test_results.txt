@@ -1,0 +1,16 @@
+Width 12 label visible in SVG region: PASS {'x': 293.41021728515625, 'y': 511.33074951171875, 'width': 22, 'height': 72.546875}
+Width label avoids right-side numeric cards: PASS label right=315
+12 × 12 correct: PASS 
+Live AI interface exists: PASS 
+Consent gate enforced: PASS 
+Local file/preview shows backend limitations: PASS 
+Mock live model reply displayed: PASS Observe the four outer edges first. Can you trace the entire boundary?
+
+AI-generated suggestion. Check the mathematics before relying on it.
+Real query sends only allowed keys: PASS {'topic': 'boundary', 'level': 1, 'p': 6, 'q': 4}
+No JavaScript errors: PASS []
+No full-page horizontal overflow at 390: PASS 
+No full-page horizontal overflow at 768: PASS 
+No full-page horizontal overflow at 1280: PASS 
+
+Real Gemini and user-owned Netlify deployment: NOT VERIFIED.
