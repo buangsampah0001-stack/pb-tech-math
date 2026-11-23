@@ -3,7 +3,7 @@
 **Course:** MTES6032, Task 2 (Digital Resources, 60%)  
 **Resource language:** English  
 **AI provider:** Google Gemini Developer API  
-**Default model:** `gemini-2.5-flash-lite`  
+**Configured and fallback model (as of 20 November 2026):** `gemini-3.1-flash-lite`  
 **Hosting:** Netlify static site + Netlify Functions
 
 ## Purpose and relation to PLO6 Criterion 6
@@ -41,7 +41,7 @@ Google indicates that **free-tier content may be used to improve its products**.
 3. Netlify should detect `netlify.toml`: build command `node scripts/build.mjs`, publish directory `site`, functions directory `netlify/functions`.
 4. Go to the Netlify project's **Project configuration → Environment variables** and add a variable with **key name** `GEMINI_API_KEY`. Paste your API key **in Netlify's secret value field**, never in HTML, a GitHub repository, this chat, a screenshot or a document.
 5. Obtain the key from https://aistudio.google.com/apikey . Make sure the API key is authorised for the Gemini Developer API and is a free-tier-eligible project.
-6. Optional: set `GEMINI_MODEL=gemini-2.5-flash-lite` if the default model is unavailable; only choose a model your project supports.
+6. Optional: set `GEMINI_MODEL=gemini-3.1-flash-lite` (the model confirmed by the submitting student); only choose a model your project supports.
 7. Ensure the variable's scope includes **Functions**. Deploy or trigger a redeploy after editing environment variables.
 8. Visit the public Netlify URL. The **Explore** mathematics page works immediately. Then open **Discover → Live AI Tutor**, tick consent, choose a level and press **Ask live AI Tutor**.
 9. A working request returns a new, generated tutoring response. If the key is missing, quota exhausted, or model unavailable, the page displays an error and the offline hints remain available.
@@ -91,3 +91,8 @@ Provide (a) the original prompting strategy, (b) the revised server-side system 
 - Google AI API reference: https://ai.google.dev/gemini-api/docs
 - Netlify Functions: https://docs.netlify.com/build/functions/get-started/
 - Netlify environment variables: https://docs.netlify.com/build/functions/environment-variables/
+
+
+## Deployment validation — 20 November 2026
+
+The submitting student provided screenshots showing the published Netlify main page and a genuine English Level 1 AI hint after changing `GEMINI_MODEL` to `gemini-3.1-flash-lite`. This is **user-provided live evidence**, not an independent API call in this audit. Check Levels 2–3 and all four misconception types separately before classroom use. A screenshot also shows GeoGebra loading; saving/reopening the native .ggb file and Google Sites embedding still require direct verification.

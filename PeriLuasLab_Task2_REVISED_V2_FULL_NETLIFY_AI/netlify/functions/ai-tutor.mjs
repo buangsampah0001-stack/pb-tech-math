@@ -46,7 +46,7 @@ export default async function handler(req){
  if(!allowRequest(ip))return json({error:'Too many AI requests. Try the offline hints or return later.'},429);
  const key=apiKey();
  if(!key)return json({error:'The AI Tutor has not been configured. Add GEMINI_API_KEY to Netlify environment variables, redeploy, then try again.'},503);
- const model=(process.env.GEMINI_MODEL||'gemini-2.5-flash-lite');
+ const model=(process.env.GEMINI_MODEL||'gemini-3.1-flash-lite');
  if(!/^[a-zA-Z0-9._-]+$/.test(model))return json({error:'Invalid AI model configuration.'},503);
  const {topic,level,p,q}=clean;
  const perimeter=2*(p+q),area=p*q;

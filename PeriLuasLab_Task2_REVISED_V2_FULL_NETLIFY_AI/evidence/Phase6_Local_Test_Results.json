@@ -1,0 +1,117 @@
+[
+  {
+    "test": "English document",
+    "status": "PASS",
+    "note": ""
+  },
+  {
+    "test": "5 sections",
+    "status": "PASS",
+    "note": ""
+  },
+  {
+    "test": "Corrected hero garden A is 4x8 squares",
+    "status": "PASS",
+    "note": ""
+  },
+  {
+    "test": "Corrected hero equal perimeter note",
+    "status": "PASS",
+    "note": ""
+  },
+  {
+    "test": "Boundary error feedback",
+    "status": "PASS",
+    "note": ""
+  },
+  {
+    "test": "Diagnostic progress",
+    "status": "PASS",
+    "note": ""
+  },
+  {
+    "test": "Default dimensions correct",
+    "status": "PASS",
+    "note": ""
+  },
+  {
+    "test": "144 mathematical combinations",
+    "status": "PASS",
+    "note": ""
+  },
+  {
+    "test": "Width 12 label does not overlap card",
+    "status": "PASS",
+    "note": "({'x': 165.41021728515625, 'y': 510.91009521484375, 'width': 22, 'height': 72.546875}, {'x': 541.7437744140625, 'y': 540.0902099609375, 'width': 174.2933349609375, 'height': 86.13330078125})"
+  },
+  {
+    "test": "Observation logged",
+    "status": "PASS",
+    "note": ""
+  },
+  {
+    "test": "Checkpoint2",
+    "status": "PASS",
+    "note": ""
+  },
+  {
+    "test": "Fixed perimeter mission",
+    "status": "PASS",
+    "note": ""
+  },
+  {
+    "test": "Fixed area mission",
+    "status": "PASS",
+    "note": ""
+  },
+  {
+    "test": "Checkpoint3",
+    "status": "PASS",
+    "note": ""
+  },
+  {
+    "test": "Consent safety guard",
+    "status": "PASS",
+    "note": ""
+  },
+  {
+    "test": "Mock AI request UI",
+    "status": "PASS",
+    "note": ""
+  },
+  {
+    "test": "Garden max and CP4",
+    "status": "PASS",
+    "note": ""
+  },
+  {
+    "test": "Reflection local save",
+    "status": "PASS",
+    "note": ""
+  },
+  {
+    "test": "Learning log export",
+    "status": "PASS",
+    "note": ""
+  },
+  {
+    "test": "Responsive 390",
+    "status": "PASS",
+    "note": "scroll=390"
+  },
+  {
+    "test": "Responsive 768",
+    "status": "PASS",
+    "note": "scroll=768"
+  },
+  {
+    "test": "Responsive 1280",
+    "status": "PASS",
+    "note": "scroll=1280"
+  },
+  {
+    "test": "No uncaught Javascript errors",
+    "status": "PASS",
+    "note": ""
+  }
+]
